@@ -1,0 +1,13 @@
+service: scrayping
+
+provider:
+  name: aws
+  runtime: python3.12
+  region: ap-northeast-1
+
+functions:
+  scrayping-function:
+    handler: handler.lambda_handler
+    layers:
+      - arn:aws:lambda:ap-northeast-1:770693421928:layer:Klayers-p39-requests:19
+      - arn:aws:lambda:ap-northeast-1:770693421928:layer:Klayers-p39-beautifulsoup4:7
